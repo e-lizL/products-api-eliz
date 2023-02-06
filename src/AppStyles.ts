@@ -9,6 +9,12 @@ const Container = styled.div`
   padding: 40px;
 `;
 
+const Card = styled.div`
+border: 1px solid white;
+padding: 10px;
+`;
+
 export {
-  Container
+  Container,
+  Card
 }
