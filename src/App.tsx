@@ -1,18 +1,11 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import { ProductProps } from './interfaces';
 import {
   Container,
   Card
 } from './AppStyles';
 
-interface ProductProps {
-  category: string;
-  title: string;
-  description: string;
-  price: number;
-  stock: number;
-}
 
 function App() {
   const [productsData, setProductsData] = useState<ProductProps[]>([]);
@@ -24,6 +17,7 @@ function App() {
     const getData = async() => {
       const res = await axios.get(productsUrl);
       const allProducts = res.data.products
+      const alphaProducts = allProducts.sort(( a: ProductProps, b: ProductProps ) => a.title.localeCompare(b.title))
       setProductsData(allProducts)
     }
 
@@ -39,7 +33,7 @@ function App() {
       {productsData 
         && productsData.map(item => 
           <Card key={item.title}>
-            <h4>Category: {item.category}</h4>
+            <h4>Category: {item.category}</h4> 
             <h4>Title: {item.title}</h4>
             <h4>Description: {item.description}</h4>
             <h4>Price: {item.price}</h4>
