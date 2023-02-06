@@ -14,7 +14,17 @@ border: 1px solid white;
 padding: 10px;
 `;
 
+const Select = styled.select`
+`;
+
+const ProductsWrapper = styled.div`
+  margin-top: 30px;
+`;
+
 export {
   Container,
-  Card
+  Card,
+  Select, 
+  ProductsWrapper
 }
+
