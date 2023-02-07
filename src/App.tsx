@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { IProduct } from './interfaces';
 import SelectOrder from './components/SelectOrder';
+import Search from './components/Search';
 import {
   Container,
   Card,
@@ -36,13 +37,13 @@ function App() {
     }
     getData(); 
   }, [order]);
-
-  console.log(productsData);
-
   
   return (
     <Container>
-      <SelectOrder order={order} setOrder={setOrder}  />
+      <SelectOrder order={order} setOrder={setOrder} />
+      
+      <Search/>
+
       <ProductsWrapper> 
         {productsData 
           && productsData.map(item => 

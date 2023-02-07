@@ -6,6 +6,7 @@ import { ISelectOrder } from '../interfaces';
 const SelectOrder = ({ order, setOrder }: ISelectOrder) => {
   return(
     <Select 
+    id="product-select"
     value={order}
     onChange={(e) => setOrder(e.target.value)}
   >
