@@ -10,15 +10,15 @@ const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState<IProduct[]>();
 
-  useEffect(() => {
-    const searchProductsUrl = 'https://dummyjson.com/products/search?q=lamp';
+  const getSearchProducts = () => {
+    const searchProductsUrl = `https://dummyjson.com/products/search?q=${searchTerm}`;
     const getData = async() => {
       const res = await axios.get(searchProductsUrl);
       const searchProducts = res.data.products
       setSearchResults(searchProducts)
     }
     getData(); 
-  }, []);
+  }
 
   return (
     <>
@@ -28,10 +28,10 @@ const Search = () => {
         id="search-products"
         placeholder="Search"
         value={searchTerm}
-        //@ts-ignore
-        onChange={() => setSearchTerm(e => e.target.value)}
+        onChange={(e) => setSearchTerm(e.target.value)}
       >
       </input>
+      <button onClick={getSearchProducts}>search</button>
 
       <ProductsWrapper> 
         {searchResults 
