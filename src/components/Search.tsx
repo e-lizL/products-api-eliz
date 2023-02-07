@@ -1,21 +1,16 @@
-import { useState, useEffect } from 'react';
-import { IProduct } from '../interfaces';
+import { useState } from 'react';
+import { ISearch } from '../interfaces'
 import axios from 'axios';
-import {
-  Card,
-  ProductsWrapper
-} from '../AppStyles';
 
-const Search = () => {
+const Search = ({ setProductsData }: ISearch) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState<IProduct[]>();
 
   const getSearchProducts = () => {
     const searchProductsUrl = `https://dummyjson.com/products/search?q=${searchTerm}`;
     const getData = async() => {
       const res = await axios.get(searchProductsUrl);
       const searchProducts = res.data.products
-      setSearchResults(searchProducts)
+      setProductsData(searchProducts)
     }
     getData(); 
   }
@@ -32,20 +27,6 @@ const Search = () => {
       >
       </input>
       <button onClick={getSearchProducts}>search</button>
-
-      <ProductsWrapper> 
-        {searchResults 
-          && searchResults.map(item => 
-            <Card key={item.title}>
-            <h4>Category: {item.category}</h4> 
-            <h4>Title: {item.title}</h4>
-            <h4>Description: {item.description}</h4>
-            <h4>Price: {item.price}</h4>
-            <h4>Stock: {item.stock}</h4>
-            </Card>
-           )
-        } 
-      </ProductsWrapper> 
     </>
   )
 }

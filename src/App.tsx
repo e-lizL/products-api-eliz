@@ -42,7 +42,8 @@ function App() {
     <Container>
       <SelectOrder order={order} setOrder={setOrder} />
       
-      <Search/>
+      {/* @ts-ignore */}
+      <Search setProductsData={setProductsData}/>
 
       <ProductsWrapper> 
         {productsData 
