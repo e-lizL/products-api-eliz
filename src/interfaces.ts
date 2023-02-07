@@ -5,3 +5,8 @@ export interface IProduct {
   price: number;
   stock: number;
 }
+
+export interface ISelectOrder {
+  order: string;
+  setOrder: (p: string) => void;
+}

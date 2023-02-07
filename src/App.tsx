@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { IProduct } from './interfaces';
+import SelectOrder from './components/SelectOrder';
 import {
   Container,
   Card,
-  Select,
   ProductsWrapper
 } from './AppStyles';
 
@@ -42,18 +42,7 @@ function App() {
   
   return (
     <Container>
-      <Select 
-        value={order}
-        onChange={(e) => setOrder(e.target.value)}
-      >
-        <option value="category">category</option>
-        <option value="title">title</option>
-        <option value="description">description</option>
-        <option value="price">price</option>
-        <option value="stock">stock</option>
-        <option value="alphabetically">alphabetically</option>
-      </Select>
-
+      <SelectOrder order={order} setOrder={setOrder}  />
       <ProductsWrapper> 
         {productsData 
           && productsData.map(item => 
