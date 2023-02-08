@@ -3,10 +3,12 @@ import axios from 'axios';
 import { IProduct } from './interfaces';
 import SelectOrder from './components/SelectOrder';
 import Search from './components/Search';
+import SelectCategory from './components/SelectCategory';
 import {
   Container,
   Card,
-  ProductsWrapper
+  ProductsWrapper,
+  SelectionsWrapper
 } from './AppStyles';
 
 
@@ -40,17 +42,21 @@ function App() {
   
   return (
     <Container>
-      <SelectOrder order={order} setOrder={setOrder} />
-      
-      {/* @ts-ignore */}
-      <Search setProductsData={setProductsData}/>
+      <SelectionsWrapper>
+        <SelectOrder order={order} setOrder={setOrder} />
+        
+        {/* @ts-ignore */}
+        <Search setProductsData={setProductsData}/>
+
+        <SelectCategory />
+      </SelectionsWrapper>
 
       <ProductsWrapper> 
         {productsData 
           && productsData.map(item => 
             <Card key={item.title}>
-              <h4>Category: {item.category}</h4> 
               <h4>Title: {item.title}</h4>
+              <h4>Category: {item.category}</h4>          
               <h4>Description: {item.description}</h4>
               <h4>Price: {item.price}</h4>
               <h4>Stock: {item.stock}</h4>

@@ -21,10 +21,18 @@ const ProductsWrapper = styled.div`
   margin-top: 30px;
 `;
 
+const SelectionsWrapper = styled.div`
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+`;
+
 export {
   Container,
   Card,
   Select, 
-  ProductsWrapper
+  ProductsWrapper,
+  SelectionsWrapper
 }
 
