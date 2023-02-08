@@ -4,6 +4,7 @@ export interface IProduct {
   description: string;
   price: number;
   stock: number;
+  id: number;
 }
 
 export interface ISelectOrder {

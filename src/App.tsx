@@ -39,6 +39,12 @@ function App() {
     }
     getData(); 
   }, [order]);
+
+  const deleteCard= (cardId: number) => {
+    const goodProducts = productsData.filter(item => item.id !== cardId);
+    setProductsData(goodProducts)
+    console.log(productsData);
+  } 
   
   return (
     <Container>
@@ -54,7 +60,7 @@ function App() {
       <ProductsWrapper> 
         {productsData 
           && productsData.map(item => 
-            <Card key={item.title}>
+            <Card key={item.title} onClick={() => deleteCard(item.id)}>
               <h4>Title: {item.title}</h4>
               <h4>Category: {item.category}</h4>          
               <h4>Description: {item.description}</h4>
