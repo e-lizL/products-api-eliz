@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { ISearch } from '../interfaces'
 import axios from 'axios';
 
-const Search = ({ setProductsData }: ISearch) => {
+// @ts-ignore
+const Search = ({ setProductsData }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const getSearchProducts = () => {

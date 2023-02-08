@@ -48,7 +48,7 @@ function App() {
         {/* @ts-ignore */}
         <Search setProductsData={setProductsData}/>
 
-        <SelectCategory />
+        <SelectCategory setProductsData={setProductsData} />
       </SelectionsWrapper>
 
       <ProductsWrapper> 
