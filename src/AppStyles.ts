@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+const StyledHeader = styled.h1`
+  color: white;
+  text-align: center;
+  padding: 40px;
+`;
+
 const Container = styled.div`
   width: 90%;
   max-width: 700px;
@@ -109,6 +115,7 @@ const CategoryWrapper = styled(SearchWrapper)`
 `;
 
 export {
+  StyledHeader,
   Container,
   Card,
   Select, 

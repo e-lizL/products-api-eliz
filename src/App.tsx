@@ -8,6 +8,7 @@ import {
   Container,
   Card,
   ProductsWrapper,
+  StyledHeader
 } from './AppStyles';
 
 
@@ -46,15 +47,16 @@ function App() {
   } 
   
   return (
+    <>
+    <StyledHeader>Pearson Products App</StyledHeader>
     <Container>
-      
+
          {/* @ts-ignore */}
          <Search setProductsData={setProductsData}/>
         
         <SelectOrder order={order} setOrder={setOrder} />
         
         <SelectCategory setProductsData={setProductsData} />
-      
 
       <ProductsWrapper> 
         {productsData 
@@ -70,6 +72,7 @@ function App() {
         } 
       </ProductsWrapper> 
     </Container>
+    </>
   );
 }
 
