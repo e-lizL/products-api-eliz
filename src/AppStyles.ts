@@ -34,6 +34,7 @@ const Select = styled.select`
   padding: 0 30px;
   display: flex;
   font-size: 1rem;
+  color: gray;
   border-radius: 20px;
 `;
 
@@ -57,11 +58,11 @@ padding: 30px;
 const OrderContainer = styled(SearchContainer)`
   background: #86E6DE;
   color: #383737;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
 `;
 
 const CategoryContainer = styled(SearchContainer)`
-  background: #aca9a9;
+  background: #787575;
   color: white;
 `;
 
