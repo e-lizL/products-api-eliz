@@ -10,7 +10,7 @@ const SelectOrder = ({ order, setOrder }: ISelectOrder) => {
   return(
     <OrderContainer>
       <OrderWrapper>
-        <StyledLabel htmlFor='order-select'>Order by:
+        <StyledLabel htmlFor='order-select'>List products by:
         </StyledLabel>
         <Select 
           id="order-select"
@@ -22,7 +22,6 @@ const SelectOrder = ({ order, setOrder }: ISelectOrder) => {
           <option value="description">description</option>
           <option value="price">price</option>
           <option value="stock">stock</option>
-          <option value="alphabetically">alphabetically</option>
         </Select>
     </OrderWrapper>
   </OrderContainer>

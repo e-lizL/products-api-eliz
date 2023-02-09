@@ -40,7 +40,7 @@ const SelectCategory = ({ setProductsData }) => {
   return (
     <CategoryContainer>
       <CategoryWrapper>
-          <StyledLabel htmlFor='category-select'>Choose a category:</StyledLabel>
+          <StyledLabel htmlFor='category-select'>Choose a product by category:</StyledLabel>
 
           <Select
             name="category-select"

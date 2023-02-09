@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 const StyledHeader = styled.h1`
   color: white;
+  font-size: 2.5rem;
+  font-weight: 400;
   text-align: center;
   padding: 40px;
 `;
@@ -44,8 +46,8 @@ const ProductsWrapper = styled.div`
 `;
 
 const SearchContainer = styled.div`
-background: #86E6DE;
-color: #3e3c3c;
+background: #4a6189;
+color: white;
 display: flex;
 flex-direction: column;
 gap: 20px;
@@ -53,8 +55,8 @@ padding: 30px;
 `;
 
 const OrderContainer = styled(SearchContainer)`
-  background: #5a6c8c;
-  color: white;
+  background: #86E6DE;
+  color: #383737;
   padding-bottom: 50px;
 `;
 

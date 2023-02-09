@@ -51,13 +51,13 @@ function App() {
     <StyledHeader>Pearson Products App</StyledHeader>
     <Container>
 
+        <SelectOrder order={order} setOrder={setOrder} />
+
+        <SelectCategory setProductsData={setProductsData} />
+         
          {/* @ts-ignore */}
          <Search setProductsData={setProductsData}/>
         
-        <SelectOrder order={order} setOrder={setOrder} />
-        
-        <SelectCategory setProductsData={setProductsData} />
-
       <ProductsWrapper> 
         {productsData 
           && productsData.map(item => 
