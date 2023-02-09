@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import axios from 'axios';
+import {
+  StyledButton,
+  ButtonContainer
+} from '../AppStyles';
 
 // @ts-ignore
 const Search = ({ setProductsData }) => {
@@ -26,7 +30,9 @@ const Search = ({ setProductsData }) => {
         onChange={(e) => setSearchTerm(e.target.value)}
       >
       </input>
-      <button onClick={getSearchProducts}>search</button>
+      <ButtonContainer>
+        <StyledButton onClick={getSearchProducts}>search</StyledButton>
+      </ButtonContainer>
     </>
   )
 }

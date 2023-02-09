@@ -4,6 +4,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 import {
   Select,
+  StyledSelectLabel,
+  StyledButton
 } from '../AppStyles';
 
 // @ts-ignore
@@ -34,7 +36,8 @@ const SelectCategory = ({ setProductsData }) => {
 
   return (
     <>
-      <label htmlFor='category-select'>choose a category:</label>
+      <StyledSelectLabel htmlFor='category-select'>Choose a category:</StyledSelectLabel>
+
       <Select
         name="category-select"
         id="category-select"
@@ -45,7 +48,7 @@ const SelectCategory = ({ setProductsData }) => {
         {categoryArray
           && categoryArray.map(item => <option key={uuidv4()} value={item}>{item}</option>)}
       </Select>
-      <button onClick={getCategoryProducts}>view category products:</button>
+      <StyledButton onClick={getCategoryProducts}>view category products</StyledButton>
     </>
   )
 }

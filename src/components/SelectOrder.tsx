@@ -1,12 +1,14 @@
 import {
   Select,
+  StyledSelectLabel
 } from '../AppStyles';
 import { ISelectOrder } from '../interfaces';
 
 const SelectOrder = ({ order, setOrder }: ISelectOrder) => {
   return(
     <>
-    <label htmlFor='order-select'>order by:</label>
+    <StyledSelectLabel htmlFor='order-select'>Order by:
+    </StyledSelectLabel>
     <Select 
       id="order-select"
       value={order}
