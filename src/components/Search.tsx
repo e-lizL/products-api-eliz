@@ -2,7 +2,11 @@ import { useState } from 'react';
 import axios from 'axios';
 import {
   StyledButton,
-  ButtonContainer
+  ButtonContainer,
+  StyledLabel,
+  StyledInput,
+  SearchWrapper,
+  SearchContainer
 } from '../AppStyles';
 
 // @ts-ignore
@@ -16,12 +20,14 @@ const Search = ({ setProductsData }) => {
       const searchProducts = res.data.products
       setProductsData(searchProducts)
     }
-    getData(); 
+    getData();
   }
 
   return (
-    <>
-      <input 
+    <SearchContainer>
+    <SearchWrapper>
+      <StyledLabel htmlFor="search-products">Search for a product:</StyledLabel>
+      <StyledInput
         type="text"
         name="search-products"
         id="search-products"
@@ -29,11 +35,14 @@ const Search = ({ setProductsData }) => {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       >
-      </input>
+      </StyledInput>
+    </SearchWrapper>
+      
+
       <ButtonContainer>
         <StyledButton onClick={getSearchProducts}>search</StyledButton>
       </ButtonContainer>
-    </>
+    </SearchContainer>
   )
 }
 export default Search

@@ -4,8 +4,11 @@ import { v4 as uuidv4 } from 'uuid';
 
 import {
   Select,
-  StyledSelectLabel,
-  StyledButton
+  StyledLabel,
+  StyledButton,
+  ButtonContainer,
+  CategoryWrapper,
+  CategoryContainer
 } from '../AppStyles';
 
 // @ts-ignore
@@ -35,21 +38,26 @@ const SelectCategory = ({ setProductsData }) => {
 
 
   return (
-    <>
-      <StyledSelectLabel htmlFor='category-select'>Choose a category:</StyledSelectLabel>
+    <CategoryContainer>
+      <CategoryWrapper>
+          <StyledLabel htmlFor='category-select'>Choose a category:</StyledLabel>
 
-      <Select
-        name="category-select"
-        id="category-select"
-        value={categoryChoice}
-        onChange={(e) => setCategoryChoice(e.target.value)}
-      >
-        
-        {categoryArray
-          && categoryArray.map(item => <option key={uuidv4()} value={item}>{item}</option>)}
-      </Select>
-      <StyledButton onClick={getCategoryProducts}>view category products</StyledButton>
-    </>
+          <Select
+            name="category-select"
+            id="category-select"
+            value={categoryChoice}
+            onChange={(e) => setCategoryChoice(e.target.value)}
+          >
+            
+            {categoryArray
+              && categoryArray.map(item => <option key={uuidv4()} value={item}>{item}</option>)}
+          </Select>
+        </CategoryWrapper>
+
+        <ButtonContainer>
+        <StyledButton onClick={getCategoryProducts}>view category products</StyledButton>
+        </ButtonContainer>
+      </CategoryContainer>
   )
 }
 

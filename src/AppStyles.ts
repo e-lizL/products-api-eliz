@@ -5,8 +5,8 @@ const Container = styled.div`
   max-width: 700px;
   margin: 0 auto;
   background: #F5F5F5;
-  color: white;
-  padding: 40px; 
+  color: white; 
+  margin-top: 20px;
 `;
 
 
@@ -17,6 +17,7 @@ const Card = styled.div`
   border-radius: 10px;
   gap: 20px;
   font-size: 1.2rem;
+  box-shadow: 0 0 10px gray;
 `;
 
 const Select = styled.select`
@@ -29,23 +30,36 @@ const Select = styled.select`
 `;
 
 const ProductsWrapper = styled.div`
-  margin-top: 30px;
+  margin-top: 50px;
   display: grid;
   grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
   gap: 20px;
+  padding: 40px;
 `;
 
-const SelectionsWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+const SearchContainer = styled.div`
+background: #86E6DE;
+color: #3e3c3c;
+display: flex;
+flex-direction: column;
+gap: 20px;
+padding: 30px;
 `;
 
-const StyledSelectLabel = styled.label`
-  color: var(--navy);
+const OrderContainer = styled(SearchContainer)`
+  background: #5a6c8c;
+  color: white;
+  padding-bottom: 50px;
+`;
+
+const CategoryContainer = styled(SearchContainer)`
+  background: #aca9a9;
+  color: white;
+`;
+
+const StyledLabel = styled.label`
   font-size: 1.5rem;
   font-weight: 600;
-  padding-left: 10px;
   margin-top: 50px;
 `;
 
@@ -58,8 +72,6 @@ const ButtonContainer = styled.div`
   border-radius: 20px;
   width: fit-content;
   padding: 10px;
-  font-size: 1rem;
-  font-weight: 600;
   width: fit-content;
   &:hover, &:active, &:focus {
     transform: scale(1.1);
@@ -78,14 +90,38 @@ const StyledButton = styled.button`
   font-weight: 600;
 `;
 
+const StyledInput = styled.input`
+  padding: 2px 12px; 
+  border-radius: 20px;
+  border: 1px solid gray;
+  font-size: 1rem;  
+`;
+
+const SearchWrapper = styled.div`
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+`;
+
+const OrderWrapper = styled(SearchWrapper)`
+`;
+const CategoryWrapper = styled(SearchWrapper)`
+`;
+
 export {
   Container,
   Card,
   Select, 
   ProductsWrapper,
-  SelectionsWrapper,
-  StyledSelectLabel,
+  StyledLabel,
   StyledButton,
-  ButtonContainer
+  ButtonContainer,
+  StyledInput,
+  SearchWrapper,
+  OrderWrapper,
+  CategoryWrapper,
+  SearchContainer,
+  OrderContainer,
+  CategoryContainer
 }
 

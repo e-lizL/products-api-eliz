@@ -8,7 +8,6 @@ import {
   Container,
   Card,
   ProductsWrapper,
-  SelectionsWrapper
 } from './AppStyles';
 
 
@@ -48,14 +47,14 @@ function App() {
   
   return (
     <Container>
-      <SelectionsWrapper>
+      
+         {/* @ts-ignore */}
+         <Search setProductsData={setProductsData}/>
+        
         <SelectOrder order={order} setOrder={setOrder} />
         
-        {/* @ts-ignore */}
-        <Search setProductsData={setProductsData}/>
-
         <SelectCategory setProductsData={setProductsData} />
-      </SelectionsWrapper>
+      
 
       <ProductsWrapper> 
         {productsData 
