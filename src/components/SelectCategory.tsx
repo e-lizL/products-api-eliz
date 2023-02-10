@@ -54,9 +54,7 @@ const SelectCategory = ({ setProductsData }) => {
           </Select>
         </CategoryWrapper>
 
-        <ButtonContainer>
         <StyledButton onClick={getCategoryProducts}>view category products</StyledButton>
-        </ButtonContainer>
       </CategoryContainer>
   )
 }

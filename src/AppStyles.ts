@@ -73,7 +73,7 @@ const StyledLabel = styled.label`
 `;
 
 const ButtonContainer = styled.div`
-  background: orange;
+  /* background: orange;
   background: linear-gradient(
     to right,
     #EC4836, #C6006F);
@@ -83,9 +83,8 @@ const ButtonContainer = styled.div`
   padding: 10px;
   width: fit-content;
   &:hover, &:active, &:focus {
-    transform: scale(1.1);
-    transition: transform .2s 
-  }
+    background: var(--navy);
+  } */
 `;
 
 const StyledButton = styled.button`
@@ -95,8 +94,14 @@ const StyledButton = styled.button`
     to right,
     #EC4836, #C6006F);
   border: none;
+  border-radius: 20px;
+  width: fit-content;
+  padding: 10px;
   font-size: 1rem;
   font-weight: 600;
+  &:hover, &:active, &:focus {
+    background: var(--navy);
+  }
 `;
 
 const StyledInput = styled.input`

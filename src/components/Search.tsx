@@ -2,7 +2,6 @@ import { useState } from 'react';
 import axios from 'axios';
 import {
   StyledButton,
-  ButtonContainer,
   StyledLabel,
   StyledInput,
   SearchWrapper,
@@ -38,10 +37,7 @@ const Search = ({ setProductsData }) => {
       </StyledInput>
     </SearchWrapper>
       
-
-      <ButtonContainer>
-        <StyledButton onClick={getSearchProducts}>search</StyledButton>
-      </ButtonContainer>
+      <StyledButton onClick={getSearchProducts}>search</StyledButton>
     </SearchContainer>
   )
 }
