@@ -7,8 +7,8 @@ import { ISelectOrder } from '../interfaces';
 
 const SelectOrder = ({ order, setOrder }: ISelectOrder) => {
   return(
-    <OrderContainer>  
-      <StyledLabel htmlFor='order-select'>List products by:
+    <OrderContainer data-test="choose-order-section">  
+      <StyledLabel data-test="choose-order-label" htmlFor='order-select'>List products by:
       </StyledLabel>
       <Select 
         id="order-select"

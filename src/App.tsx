@@ -9,7 +9,8 @@ import {
   Card,
   ProductsWrapper,
   StyledHeader,
-  CrossButton
+  CrossButton,
+  StyledH2
 } from './AppStyles';
 
 
@@ -59,10 +60,11 @@ function App() {
         {/* @ts-ignore */}
         <Search setProductsData={setProductsData}/>
           
-        <ProductsWrapper> 
+        <ProductsWrapper data-test="product-cards-section"> 
+        <StyledH2 data-test="product-cards-title">Available products:</StyledH2>
           {productsData 
             && productsData.map(item => 
-              <Card key={item.id} >
+              <Card data-test="product-card" key={item.id} >
                 <CrossButton onClick={() => deleteCard(item.id)}><span>X</span></CrossButton>
                 <h4>Title: {item.title}</h4>
                 <h4>Category: {item.category}</h4>          

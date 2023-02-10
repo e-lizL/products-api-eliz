@@ -23,9 +23,9 @@ const Search = ({ setProductsData }) => {
   }
 
   return (
-    <SearchContainer>
+    <SearchContainer data-test="search-section">
       <SearchWrapper>
-        <StyledLabel htmlFor="search-products">Search for a product:</StyledLabel>
+        <StyledLabel data-test="search-label" htmlFor="search-products">Search for a product:</StyledLabel>
         <StyledInput
         type="text"
         name="search-products"
@@ -37,7 +37,7 @@ const Search = ({ setProductsData }) => {
         </StyledInput>
       </SearchWrapper>
       
-      <StyledButton onClick={getSearchProducts}>search</StyledButton>
+      <StyledButton data-test="search-button" onClick={getSearchProducts}>search</StyledButton>
       
     </SearchContainer>
   )

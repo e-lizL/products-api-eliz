@@ -36,8 +36,8 @@ const SelectCategory = ({ setProductsData }) => {
 
 
   return (
-    <CategoryContainer>
-      <StyledLabel htmlFor='category-select'>Choose a product by category:</StyledLabel>
+    <CategoryContainer data-test="choose-category-section">
+      <StyledLabel data-test="choose-category-label" htmlFor='category-select'>Choose a product by category:</StyledLabel>
      <Select
         name="category-select"
         id="category-select"
@@ -49,7 +49,7 @@ const SelectCategory = ({ setProductsData }) => {
           && categoryArray.map(item => <option key={uuidv4()} value={item}>{item}</option>)}
      </Select>
       
-      <StyledButton onClick={getCategoryProducts}>view category products</StyledButton>
+      <StyledButton data-test="category-button" onClick={getCategoryProducts}>view category products</StyledButton>
     </CategoryContainer>
   )
 }

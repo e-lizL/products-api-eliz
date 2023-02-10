@@ -82,6 +82,10 @@ const StyledButton = styled.button`
   }
 `;
 
+const StyledH2 = styled.h2`
+  color: var(--navy);
+`;
+
 const ProductsWrapper = styled.div`
   margin-top: 50px;
   display: grid;
@@ -128,8 +132,10 @@ export {
   StyledLabel,
   StyledInput,
   StyledButton,
+  StyledH2,
   ProductsWrapper,
   Card,
-  CrossButton
+  CrossButton,
+  
 }
 
