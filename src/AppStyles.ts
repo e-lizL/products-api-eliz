@@ -10,7 +10,7 @@ const StyledHeader = styled.h1`
 
 const Container = styled.div`
   width: 90%;
-  max-width: 700px;
+  max-width: 700px;  
   margin: 0 auto;
   background: #F5F5F5;
   color: white; 
@@ -29,7 +29,7 @@ const Select = styled.select`
   padding: 0 30px;
   display: flex;
   font-size: 1rem;
-  color: gray;
+  color: black;
   border-radius: 20px;
 `;
 
