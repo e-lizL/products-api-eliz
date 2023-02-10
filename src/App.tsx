@@ -8,7 +8,8 @@ import {
   Container,
   Card,
   ProductsWrapper,
-  StyledHeader
+  StyledHeader,
+  CrossButton
 } from './AppStyles';
 
 
@@ -48,30 +49,33 @@ function App() {
   
   return (
     <>
-    <StyledHeader>Pearson Products App</StyledHeader>
-    <Container>
+      <StyledHeader>Pearson Products App</StyledHeader>
+
+      <Container>
 
         <SelectOrder order={order} setOrder={setOrder} />
 
         <SelectCategory setProductsData={setProductsData} />
-         
-         {/* @ts-ignore */}
-         <Search setProductsData={setProductsData}/>
-        
-      <ProductsWrapper> 
-        {productsData 
-          && productsData.map(item => 
-            <Card key={item.title} onClick={() => deleteCard(item.id)}>
-              <h4>Title: {item.title}</h4>
-              <h4>Category: {item.category}</h4>          
-              <h4>Description: {item.description}</h4>
-              <h4>Price: {item.price}</h4>
-              <h4>Stock: {item.stock}</h4>
-            </Card>
-          )
-        } 
-      </ProductsWrapper> 
-    </Container>
+          
+        {/* @ts-ignore */}
+        <Search setProductsData={setProductsData}/>
+          
+        <ProductsWrapper> 
+          {productsData 
+            && productsData.map(item => 
+              <Card key={item.title} >
+                <CrossButton onClick={() => deleteCard(item.id)}><span>X</span></CrossButton>
+                <h4>Title: {item.title}</h4>
+                <h4>Category: {item.category}</h4>          
+                <h4>Description: {item.description}</h4>
+                <h4>Price: £{item.price}</h4>
+                <h4>Stock: {item.stock}</h4>
+              </Card>
+            )
+          } 
+        </ProductsWrapper> 
+
+      </Container>
     </>
   );
 }

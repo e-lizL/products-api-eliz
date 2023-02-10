@@ -17,15 +17,10 @@ const Container = styled.div`
   margin-top: 20px;
 `;
 
-
-const Card = styled.div`
-  background: var(--navy);
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
+const SearchWrapper = styled.div`
+  display: flex;
+  align-items: flex-end;
   gap: 20px;
-  font-size: 1.2rem;
-  box-shadow: 0 0 10px gray;
 `;
 
 const Select = styled.select`
@@ -38,27 +33,18 @@ const Select = styled.select`
   border-radius: 20px;
 `;
 
-const ProductsWrapper = styled.div`
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
-  gap: 20px;
-  padding: 40px;
-`;
-
 const SearchContainer = styled.div`
-background: #4a6189;
-color: white;
-display: flex;
-flex-direction: column;
-gap: 20px;
-padding: 30px;
+  background: #4a6189;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
 `;
 
 const OrderContainer = styled(SearchContainer)`
   background: #86E6DE;
   color: #383737;
-  /* padding-bottom: 50px; */
 `;
 
 const CategoryContainer = styled(SearchContainer)`
@@ -72,19 +58,11 @@ const StyledLabel = styled.label`
   margin-top: 50px;
 `;
 
-const ButtonContainer = styled.div`
-  /* background: orange;
-  background: linear-gradient(
-    to right,
-    #EC4836, #C6006F);
-  border: none;
+const StyledInput = styled.input`
+  padding: 2px 12px; 
   border-radius: 20px;
-  width: fit-content;
-  padding: 10px;
-  width: fit-content;
-  &:hover, &:active, &:focus {
-    background: var(--navy);
-  } */
+  border: 1px solid gray;
+  font-size: 1rem;  
 `;
 
 const StyledButton = styled.button`
@@ -104,39 +82,54 @@ const StyledButton = styled.button`
   }
 `;
 
-const StyledInput = styled.input`
-  padding: 2px 12px; 
-  border-radius: 20px;
-  border: 1px solid gray;
-  font-size: 1rem;  
-`;
-
-const SearchWrapper = styled.div`
-  display: flex;
-  align-items: flex-end;
+const ProductsWrapper = styled.div`
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax 250px, 1fr);
   gap: 20px;
+  padding: 40px;
 `;
 
-const OrderWrapper = styled(SearchWrapper)`
+const Card = styled.div`
+  background: var(--navy);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  box-shadow: 0 0 10px gray;
 `;
-const CategoryWrapper = styled(SearchWrapper)`
+
+const CrossButton = styled.button`
+  font-size: 1.5rem;
+  border: 1px solid white;
+  padding: 6px 10px;
+  align-self: end;
+  text-align: center;
+  background: #4a6189;
+  color: white;
+  border-radius: 5px;
+  border: 0; 
+  &:hover, &:active, &:focus {
+    background: white;
+    color: red;
+  }
 `;
 
 export {
   StyledHeader,
   Container,
-  Card,
-  Select, 
-  ProductsWrapper,
-  StyledLabel,
-  StyledButton,
-  ButtonContainer,
-  StyledInput,
   SearchWrapper,
-  OrderWrapper,
-  CategoryWrapper,
+  Select, 
   SearchContainer,
   OrderContainer,
-  CategoryContainer
+  CategoryContainer,
+  StyledLabel,
+  StyledInput,
+  StyledButton,
+  ProductsWrapper,
+  Card,
+  CrossButton
 }
 
