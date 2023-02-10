@@ -29,7 +29,6 @@ function App() {
     }
   }
   
-  
   useEffect(() => {
     const productsUrl = 'https://dummyjson.com/products';
     const getData = async() => {
@@ -63,7 +62,7 @@ function App() {
         <ProductsWrapper> 
           {productsData 
             && productsData.map(item => 
-              <Card key={item.title} >
+              <Card key={item.id} >
                 <CrossButton onClick={() => deleteCard(item.id)}><span>X</span></CrossButton>
                 <h4>Title: {item.title}</h4>
                 <h4>Category: {item.category}</h4>          

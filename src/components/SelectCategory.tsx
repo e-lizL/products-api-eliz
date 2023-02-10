@@ -6,8 +6,6 @@ import {
   Select,
   StyledLabel,
   StyledButton,
-  ButtonContainer,
-  CategoryWrapper,
   CategoryContainer
 } from '../AppStyles';
 
@@ -39,23 +37,20 @@ const SelectCategory = ({ setProductsData }) => {
 
   return (
     <CategoryContainer>
-      <CategoryWrapper>
-          <StyledLabel htmlFor='category-select'>Choose a product by category:</StyledLabel>
-
-          <Select
-            name="category-select"
-            id="category-select"
-            value={categoryChoice}
-            onChange={(e) => setCategoryChoice(e.target.value)}
-          >
-            
-            {categoryArray
-              && categoryArray.map(item => <option key={uuidv4()} value={item}>{item}</option>)}
-          </Select>
-        </CategoryWrapper>
-
-        <StyledButton onClick={getCategoryProducts}>view category products</StyledButton>
-      </CategoryContainer>
+      <StyledLabel htmlFor='category-select'>Choose a product by category:</StyledLabel>
+     <Select
+        name="category-select"
+        id="category-select"
+        value={categoryChoice}
+        onChange={(e) => setCategoryChoice(e.target.value)}
+      >
+        
+        {categoryArray
+          && categoryArray.map(item => <option key={uuidv4()} value={item}>{item}</option>)}
+     </Select>
+      
+      <StyledButton onClick={getCategoryProducts}>view category products</StyledButton>
+    </CategoryContainer>
   )
 }
 

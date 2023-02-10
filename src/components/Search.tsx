@@ -24,20 +24,21 @@ const Search = ({ setProductsData }) => {
 
   return (
     <SearchContainer>
-    <SearchWrapper>
-      <StyledLabel htmlFor="search-products">Search for a product:</StyledLabel>
-      <StyledInput
+      <SearchWrapper>
+        <StyledLabel htmlFor="search-products">Search for a product:</StyledLabel>
+        <StyledInput
         type="text"
         name="search-products"
         id="search-products"
         placeholder="Search"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-      >
-      </StyledInput>
-    </SearchWrapper>
+        >
+        </StyledInput>
+      </SearchWrapper>
       
       <StyledButton onClick={getSearchProducts}>search</StyledButton>
+      
     </SearchContainer>
   )
 }
