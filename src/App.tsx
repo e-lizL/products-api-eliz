@@ -7,10 +7,13 @@ import SelectCategory from './components/SelectCategory';
 import {
   Container,
   Card,
-  ProductsWrapper,
+  CardsWrapper,
   StyledHeader,
   CrossButton,
-  StyledH2
+  StyledHeading,
+  InfoTitle,
+  InfoWrapper,
+  InfoWrapperLarge,
 } from './AppStyles';
 
 
@@ -60,21 +63,43 @@ function App() {
         {/* @ts-ignore */}
         <Search setProductsData={setProductsData}/>
           
-        <ProductsWrapper data-test="product-cards-section"> 
-        <StyledH2 data-test="product-cards-title">Available products:</StyledH2>
-          {productsData 
-            && productsData.map(item => 
-              <Card data-test="product-card" key={item.id} >
-                <CrossButton onClick={() => deleteCard(item.id)}><span>X</span></CrossButton>
-                <h4>Title: {item.title}</h4>
-                <h4>Category: {item.category}</h4>          
-                <h4>Description: {item.description}</h4>
-                <h4>Price: £{item.price}</h4>
-                <h4>Stock: {item.stock}</h4>
-              </Card>
-            )
-          } 
-        </ProductsWrapper> 
+        <div>
+          <StyledHeading data-test="product-cards-title">Available products:</StyledHeading>
+          <CardsWrapper data-test="product-cards-section"> 
+            {productsData 
+              && productsData.map(item => 
+                <Card data-test="product-card" key={item.id} >
+                  <CrossButton onClick={() => deleteCard(item.id)}><span>X</span></CrossButton>
+                  <InfoWrapper>
+                    <InfoTitle>Title:</InfoTitle>
+                    <div>{item.title}</div>
+                  </InfoWrapper>
+
+                  <InfoWrapper>
+                    <InfoTitle>Category:</InfoTitle>
+                    <div>{item.category}</div>
+                  </InfoWrapper>
+
+                  <InfoWrapperLarge>
+                    <InfoTitle>Description:</InfoTitle>
+                    <div>{item.description}</div>
+                  </InfoWrapperLarge>
+
+                  <InfoWrapper>
+                    <InfoTitle>Price:</InfoTitle>
+                    <div>£{item.price}</div>
+                  </InfoWrapper>
+
+                  <InfoWrapper>
+                    <InfoTitle>Stock:</InfoTitle>
+                    <div>{item.stock}</div>
+                  </InfoWrapper>
+
+                </Card>
+              )
+            } 
+          </CardsWrapper> 
+        </div>
 
       </Container>
     </>

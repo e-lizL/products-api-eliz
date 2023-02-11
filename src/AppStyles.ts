@@ -10,93 +10,76 @@ const StyledHeader = styled.h1`
 
 const Container = styled.div`
   width: 90%;
-  max-width: 700px;  
+  max-width: 900px;  
   margin: 0 auto;
   background: #F5F5F5;
   color: white; 
   margin-top: 20px;
 `;
 
-const SearchWrapper = styled.div`
+const Section = styled.div`
   display: flex;
-  align-items: flex-end;
-  gap: 20px;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px 20px;
+  @media (min-width: 350px) {
+    padding: 40px;
+  }
+`;
+
+const OrderWrapper = styled(Section)`
+  background: var(--pastel-green);
+  color: #383737;
+`;
+
+const CategoryWrapper = styled(Section)`
+  background: #787575;
+  color: white;
+`;
+
+const SearchWrapper = styled(Section)`
+  background: var(--sky-blue);
 `;
 
 const Select = styled.select`
   height: 30px;
-  width: 220px;
-  padding: 0 30px;
-  display: flex;
+  padding: 0 12px;
   font-size: 1rem;
   color: black;
   border-radius: 20px;
-`;
-
-const SearchContainer = styled.div`
-  background: #4a6189;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 30px;
-`;
-
-const OrderContainer = styled(SearchContainer)`
-  background: #86E6DE;
-  color: #383737;
-`;
-
-const CategoryContainer = styled(SearchContainer)`
-  background: #787575;
-  color: white;
+  max-width: 230px;
 `;
 
 const StyledLabel = styled.label`
   font-size: 1.5rem;
   font-weight: 600;
-  margin-top: 50px;
 `;
 
 const StyledInput = styled.input`
-  padding: 2px 12px; 
+  padding: 8px 15px; 
   border-radius: 20px;
   border: 1px solid gray;
   font-size: 1rem;  
+  max-width: 230px;
 `;
 
-const StyledButton = styled.button`
-  color: white;
-  background: orange;
-  background: linear-gradient(
-    to right,
-    #EC4836, #C6006F);
-  border: none;
-  border-radius: 20px;
-  width: fit-content;
-  padding: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-  &:hover, &:active, &:focus {
-    background: var(--navy);
-  }
-`;
-
-const StyledH2 = styled.h2`
+const StyledHeading = styled.h2`
   color: var(--navy);
+  padding: 30px 0 0 30px;
 `;
 
-const ProductsWrapper = styled.div`
-  margin-top: 50px;
+const CardsWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax 250px, 1fr);
+  grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
   gap: 20px;
-  padding: 40px;
+  @media (min-width: 400px) {
+    padding: 40px;
+  }
 `;
 
 const Card = styled.div`
   background: var(--navy);
-  padding: 20px;
+  padding: 20px 20px 40px;
   margin-bottom: 20px;
   border-radius: 10px;
   display: flex;
@@ -121,21 +104,37 @@ const CrossButton = styled.button`
   }
 `;
 
+const InfoWrapper = styled.div`
+  margin-top: 10px;
+  display: flex;
+  gap: 1rem;
+`;
+
+const InfoWrapperLarge = styled(InfoWrapper)`
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+
+const InfoTitle = styled.div`
+  color: var(--pastel-green);
+`;
+
 export {
   StyledHeader,
   Container,
   SearchWrapper,
   Select, 
-  SearchContainer,
-  OrderContainer,
-  CategoryContainer,
+  OrderWrapper,
+  CategoryWrapper,
   StyledLabel,
   StyledInput,
-  StyledButton,
-  StyledH2,
-  ProductsWrapper,
+  StyledHeading,
+  CardsWrapper,
   Card,
   CrossButton,
-  
+  Section,
+  InfoWrapper,
+  InfoWrapperLarge,
+  InfoTitle
 }
 

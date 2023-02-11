@@ -1,15 +1,17 @@
 import {
   Select,
   StyledLabel,
-  OrderContainer
+  OrderWrapper
 } from '../AppStyles';
 import { ISelectOrder } from '../interfaces';
 
 const SelectOrder = ({ order, setOrder }: ISelectOrder) => {
   return(
-    <OrderContainer data-test="choose-order-section">  
+    <OrderWrapper data-test="choose-order-section">  
+
       <StyledLabel data-test="choose-order-label" htmlFor='order-select'>List products by:
       </StyledLabel>
+
       <Select 
         id="order-select"
         value={order}
@@ -21,7 +23,8 @@ const SelectOrder = ({ order, setOrder }: ISelectOrder) => {
         <option value="price">price</option>
         <option value="stock">stock</option>
       </Select>   
-  </OrderContainer>
+
+    </OrderWrapper>
   )
 }
 

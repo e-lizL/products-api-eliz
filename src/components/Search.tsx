@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import axios from 'axios';
+import Button from './Button'
 import {
-  StyledButton,
   StyledLabel,
   StyledInput,
   SearchWrapper,
-  SearchContainer
 } from '../AppStyles';
 
 // @ts-ignore
@@ -23,23 +22,23 @@ const Search = ({ setProductsData }) => {
   }
 
   return (
-    <SearchContainer data-test="search-section">
-      <SearchWrapper>
-        <StyledLabel data-test="search-label" htmlFor="search-products">Search for a product:</StyledLabel>
-        <StyledInput
+    <SearchWrapper data-test="search-section">
+
+      <StyledLabel data-test="search-label" htmlFor="search-products">Search for a product:</StyledLabel>
+
+      <StyledInput
         type="text"
         name="search-products"
         id="search-products"
         placeholder="Search"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        >
-        </StyledInput>
-      </SearchWrapper>
+      >
+      </StyledInput>
       
-      <StyledButton data-test="search-button" onClick={getSearchProducts}>search</StyledButton>
+      <Button data-test="search-button" onClickFunction={getSearchProducts}>search</Button>
       
-    </SearchContainer>
+    </SearchWrapper>
   )
 }
 export default Search

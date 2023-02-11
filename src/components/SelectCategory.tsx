@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
-
+import Button from './Button'
 import {
   Select,
   StyledLabel,
-  StyledButton,
-  CategoryContainer
+  CategoryWrapper
 } from '../AppStyles';
 
 // @ts-ignore
@@ -36,7 +35,7 @@ const SelectCategory = ({ setProductsData }) => {
 
 
   return (
-    <CategoryContainer data-test="choose-category-section">
+    <CategoryWrapper data-test="choose-category-section">
       <StyledLabel data-test="choose-category-label" htmlFor='category-select'>Choose a product by category:</StyledLabel>
      <Select
         name="category-select"
@@ -49,8 +48,8 @@ const SelectCategory = ({ setProductsData }) => {
           && categoryArray.map(item => <option key={uuidv4()} value={item}>{item}</option>)}
      </Select>
       
-      <StyledButton data-test="category-button" onClick={getCategoryProducts}>view category products</StyledButton>
-    </CategoryContainer>
+      <Button data-test="category-button" onClickFunction={getCategoryProducts}>view products</Button>
+    </CategoryWrapper>
   )
 }
 
