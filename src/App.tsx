@@ -20,6 +20,7 @@ import {
 function App() {
   const [productsData, setProductsData] = useState<IProduct[]>([]);
   const [order, setOrder] = useState("alphabetically");
+  const [isLoading, setIsLoading] = useState(false);
 
   const sortProducts = (prop: string | number) => {
     return (a: IProduct, b: IProduct) => {
@@ -35,11 +36,17 @@ function App() {
   
   useEffect(() => {
     const productsUrl = 'https://dummyjson.com/products';
-    const getData = async() => {
-      const res = await axios.get(productsUrl);
-      const allProducts = res.data.products.sort(sortProducts(order));
-      
-      setProductsData(allProducts)
+    const getData = async () => {
+      try {
+        setIsLoading(true);
+        const res = await axios.get(productsUrl);
+        const allProducts = res.data.products.sort(sortProducts(order));
+        
+        setProductsData(allProducts)
+        setIsLoading(false)
+      } catch (error) {
+        console.log(error);
+      }
     }
     getData(); 
   }, [order]);
@@ -66,6 +73,7 @@ function App() {
         <div>
           <StyledHeading data-test="product-cards-title">Available products:</StyledHeading>
           <CardsWrapper data-test="product-cards-section"> 
+          {isLoading && <h3>Loading...</h3>}
             {productsData 
               && productsData.map(item => 
                 <Card data-test="product-card" key={item.id} >

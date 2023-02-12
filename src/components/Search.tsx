@@ -36,7 +36,7 @@ const Search = ({ setProductsData }) => {
       >
       </StyledInput>
       
-      <Button data-test="search-button" onClickFunction={getSearchProducts}>search</Button>
+      <Button dataTest="search-button" onClickFunction={getSearchProducts}>search</Button>
       
     </SearchWrapper>
   )

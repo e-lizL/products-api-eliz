@@ -48,7 +48,7 @@ const SelectCategory = ({ setProductsData }) => {
           && categoryArray.map(item => <option key={uuidv4()} value={item}>{item}</option>)}
      </Select>
       
-      <Button data-test="category-button" onClickFunction={getCategoryProducts}>view products</Button>
+      <Button dataTest="category-button" onClickFunction={getCategoryProducts}>view products</Button>
     </CategoryWrapper>
   )
 }

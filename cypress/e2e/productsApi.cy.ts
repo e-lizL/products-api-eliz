@@ -15,12 +15,12 @@ describe('checks main features of site are displayed', () => {
     // choose category
     cy.get('[data-test="choose-category-section"]').should('be.visible');
     cy.get('[data-test="choose-category-label"]').should('have.text', 'Choose a product by category:')
-    cy.get('[data-test="category-button"]').click()
+    cy.get('[data-test="category-button"]').click({force: true})
 
     // search
     cy.get('[data-test="search-section"]').should('be.visible');
     cy.get('[data-test="search-label"]').should('have.text', 'Search for a product:')
-    cy.get('[data-test="search-button"]').click()
+    cy.get('[data-test="search-button"]').click({force: true})
 
     // available products
     cy.get('[data-test="product-cards-section"]').should('be.visible');

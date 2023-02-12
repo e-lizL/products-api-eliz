@@ -20,11 +20,12 @@ const StyledButton = styled.button`
 interface IButton {
   children: React.ReactNode;
   onClickFunction: () => void;
+  dataTest: string;
 }
 
-const Button = ({children, onClickFunction }: IButton) => {
+const Button = ({children, onClickFunction, dataTest }: IButton) => {
   return (
-    <StyledButton onClick={onClickFunction}>{children}</StyledButton>
+    <StyledButton data-test={dataTest} onClick={onClickFunction}>{children}</StyledButton>
   )
 }
 
