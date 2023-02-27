@@ -59,7 +59,7 @@ function App() {
   
   return (
     <>
-      <StyledHeader>Pearson Products App</StyledHeader>
+      <StyledHeader>Products App</StyledHeader>
 
       <Container>
 
